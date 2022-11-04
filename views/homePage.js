@@ -1,4 +1,4 @@
-const renderHomePage = (shows) => {
+const homePage = (shows) => {
   return(`
     <html>
       <head>
@@ -31,4 +31,4 @@ const renderHomePage = (shows) => {
   `);
 };
 
-module.exports = renderHomePage;
+module.exports = homePage;

@@ -1,9 +1,9 @@
 const express = require('express');
 const path = require('path');
 const { client, syncAndSeed } = require('./db');
-const renderHomePage = require('./homePage');
-const renderDetailsPage = require('./detailsPage');
-const renderAboutPage = require('./aboutPage');
+const homePage = require('./views/homePage');
+const detailsPage = require('./views/detailsPage');
+const aboutPage = require('./views/aboutPage');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -16,7 +16,7 @@ app.get('/', async(req, res, next) => {
     const shows = response.rows;
 
     res.send(
-      renderHomePage(shows)
+      homePage(shows)
     );
   }
   catch(error) {
@@ -65,7 +65,7 @@ app.get('/shows/:id', async(req, res, next) => {
     const origin = originResponse.rows[0].name;
 
     res.send(
-      renderDetailsPage(show, genre, releaseYear, origin)
+      detailsPage(show, genre, releaseYear, origin)
     );
   }
   catch(error) {
@@ -75,7 +75,7 @@ app.get('/shows/:id', async(req, res, next) => {
 
 app.get('/about', (req, res, next) => {
   res.send(
-    renderAboutPage()
+    aboutPage()
   );
 });
 

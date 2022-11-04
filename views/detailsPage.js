@@ -1,4 +1,4 @@
-const renderAboutPage = () => {
+const detailsPage = (show, genre, releaseYear, origin) => {
   return(`
     <html>
       <head>
@@ -12,12 +12,13 @@ const renderAboutPage = () => {
               <a href='/'>Home</a>
               <a href='/about'>About</a>
             </nav>
-            <h1>About</h1>
+            <h1><a href='/'>Selected TV Shows</a></h1>
           </div>
           <ul>
-            <li><span class="bold">Created By: </span>Gary White</li>
-            <li><span class="bold">Program: </span>Fullstack Academy</li>
-            <li><span class="bold">Year: </span>2022</li>
+            <li><span class="bold">${show}</span></li>
+            <li><span class="bold">Genre: </span>${genre}</li>
+            <li><span class="bold">Release Year: </span>${releaseYear}</li>
+            <li><span class="bold">Origin: </span>${origin}</li>
           </ul>
         </div>
       </body>
@@ -25,4 +26,4 @@ const renderAboutPage = () => {
   `);
 };
 
-module.exports = renderAboutPage;
+module.exports = detailsPage;
