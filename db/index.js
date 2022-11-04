@@ -31,19 +31,30 @@ const syncAndSeed = async() => {
       origin_id INTEGER REFERENCES "Origin"(id)
     );
 
-    INSERT INTO "Genre"(id, name) VALUES(1, 'Fantasy');
-    INSERT INTO "Genre"(id, name) VALUES(2, 'Drama');
-    INSERT INTO "Genre"(id, name) VALUES(3, 'Action');
+    INSERT INTO "Genre"(id, name) 
+      VALUES(1, 'Fantasy');
+    INSERT INTO "Genre"(id, name) 
+      VALUES(2, 'Drama');
+    INSERT INTO "Genre"(id, name) 
+      VALUES(3, 'Action');
 
-    INSERT INTO "Release Year"(id, year) VALUES(1, 2017);
-    INSERT INTO "Release Year"(id, year) VALUES(2, 2018);
-    INSERT INTO "Release Year"(id, year) VALUES(3, 2019);
-    INSERT INTO "Release Year"(id, year) VALUES(4, 2020);
-    INSERT INTO "Release Year"(id, year) VALUES(5, 2021);
-    INSERT INTO "Release Year"(id, year) VALUES(6, 2022);
+    INSERT INTO "Release Year"(id, year) 
+      VALUES(1, 2017);
+    INSERT INTO "Release Year"(id, year) 
+      VALUES(2, 2018);
+    INSERT INTO "Release Year"(id, year) 
+      VALUES(3, 2019);
+    INSERT INTO "Release Year"(id, year) 
+      VALUES(4, 2020);
+    INSERT INTO "Release Year"(id, year) 
+      VALUES(5, 2021);
+    INSERT INTO "Release Year"(id, year) 
+      VALUES(6, 2022);
 
-    INSERT INTO "Origin"(id, name) VALUES(1, 'United States');
-    INSERT INTO "Origin"(id, name) VALUES(2, 'Japan');
+    INSERT INTO "Origin"(id, name) 
+      VALUES(1, 'United States');
+    INSERT INTO "Origin"(id, name) 
+      VALUES(2, 'Japan');
 
     INSERT INTO "Show"(id, name, genre_id, release_year_id, origin_id) 
       VALUES(1, 'House of the Dragon', 1, 6, 1);

@@ -37,7 +37,7 @@ app.get('/shows/:id', async(req, res, next) => {
         SELECT "Genre".name 
         FROM "Genre" 
         INNER JOIN "Show" 
-        on "Genre".id = "Show".genre_id 
+        ON "Genre".id = "Show".genre_id 
         WHERE "Show".id=$1;`, 
         [req.params.id]
       ),
@@ -45,14 +45,15 @@ app.get('/shows/:id', async(req, res, next) => {
         SELECT "Release Year".year 
         FROM "Release Year" 
         INNER JOIN "Show" 
-        on "Release Year".id = "Show".release_year_id 
+        ON "Release Year".id = "Show".release_year_id 
         WHERE "Show".id=$1;`, 
         [req.params.id]
       ),
       client.query(`
         SELECT "Origin".name 
         FROM "Origin" 
-        INNER JOIN "Show" on "Origin".id = "Show".origin_id 
+        INNER JOIN "Show" 
+        ON "Origin".id = "Show".origin_id 
         WHERE "Show".id=$1;`, 
         [req.params.id]
       )
